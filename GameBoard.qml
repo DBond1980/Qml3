@@ -1,15 +1,24 @@
 import QtQuick 2.0
 
 GridView {
-    id: root
+    id: _root
     model: TilesModel{
     }
 
-    cellWidth: root.width / 4
-    cellHeight: root.height / 4
+    cellWidth: _root.width / 4
+    cellHeight: _root.height / 4
 
-    delegate: Tile{
-        width: root.cellWidth
-        height: root.cellHeight
+    delegate: Item{
+        id: _backgroundDelegate
+        width: _root.cellWidth
+        height: _root.cellHeight
+
+        visible: display != 16
+
+        Tile {
+            anchors.fill: _backgroundDelegate
+            anchors.margins: 5
+            displayText: display
+        }
     }
 }
