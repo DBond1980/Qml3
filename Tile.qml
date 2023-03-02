@@ -14,7 +14,7 @@ Rectangle {
         anchors.centerIn: _root
         text: _root.displayText
         font{
-            pointSize: Math.min(_root.width, _root.height) / 4
+            pixelSize: Math.min(_root.width, _root.height) / 2
             bold: true
         }
     }
